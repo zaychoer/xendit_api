@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.xendit.co/v2/payment_methods
+    body:
+      encoding: UTF-8
+      string: '{"type":"QR_CODE","reusability":"ONE_TIME_USE","qr_code":{"amount":1000,"currency":"IDR","channel_code":"DANA"}}'
+    headers:
+      Authorization: FILTERED_AUTH_KEY
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 03 Jul 2024 07:49:48 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '712'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Rate-Limit-Limit:
+      - '600'
+      Rate-Limit-Remaining:
+      - '599'
+      Rate-Limit-Reset:
+      - '60'
+      Request-Id:
+      - '9077232143069985739'
+      Vary:
+      - Origin, Accept-Encoding
+      X-Powered-By:
+      - Express
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=GApcnIV7fv7TlZ0BA9K_XQPG.dPJql3NHGXx998qI44-1719992988-1.0.1.1-v_1g9ZvqI_FeLByesEu8t29UqrxmzazEYdaCuZCNeK4UHQgGZTlYQASXDzGgKZwBMu6vb2XjkbU__ZscVpYaEQ;
+        path=/; expires=Wed, 03-Jul-24 08:19:48 GMT; domain=.xendit.co; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 89d547f2ca4f46a9-SIN
+    body:
+      encoding: UTF-8
+      string: '{"id":"pm-82c64e96-7400-4981-b95a-7b7e1ca6acca","type":"QR_CODE","country":"ID","business_id":"66309c544d1384b813795b6f","customer_id":null,"reference_id":"be2ab461-a386-4d1e-9c63-940af26cc9e4","reusability":"ONE_TIME_USE","status":"ACTIVE","actions":[],"description":null,"created":"2024-07-03T07:49:48.728035366Z","updated":"2024-07-03T07:49:48.728035366Z","metadata":null,"billing_information":null,"failure_code":null,"ewallet":null,"direct_bank_transfer":null,"direct_debit":null,"card":null,"over_the_counter":null,"qr_code":{"amount":1000,"currency":"IDR","channel_code":"DANA","channel_properties":{"qr_string":"some-random-qr-string","expires_at":"2024-07-05T07:49:48.717378Z"}},"virtual_account":null}
+
+        '
+  recorded_at: Wed, 03 Jul 2024 07:49:48 GMT
+recorded_with: VCR 6.2.0

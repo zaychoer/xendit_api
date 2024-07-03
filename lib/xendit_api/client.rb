@@ -13,6 +13,7 @@ require 'xendit_api/api/transfer'
 require 'xendit_api/api/transaction'
 require 'xendit_api/api/fee_rule'
 require 'xendit_api/api/report'
+require 'xendit_api/api/v2/payment_method'
 require 'logger'
 
 module XenditApi
@@ -94,6 +95,10 @@ module XenditApi
 
     def report
       @report || XenditApi::Api::Report.new(self)
+    end
+
+    def payment_method
+      @payment_method ||= XenditApi::Api::V2::PaymentMethod.new(self)
     end
 
     def get(url, params = nil, headers = {})

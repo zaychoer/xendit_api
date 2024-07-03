@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.xendit.co/v2/payment_methods
+    body:
+      encoding: UTF-8
+      string: '{"type":"VIRTUAL_ACCOUNT","virtual_account":{"amount":100000,"currency":"IDR","channel_code":"BSI","channel_properties":{"customer_name":"John
+        Doe","expires_at":"2024-07-04T06:47:23.784379Z"}},"reusability":"ONE_TIME_USE","metadata":{"branch_code":"ABC123"}}'
+    headers:
+      Authorization: FILTERED_AUTH_KEY
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Wed, 03 Jul 2024 07:40:06 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '776'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Rate-Limit-Limit:
+      - '600'
+      Rate-Limit-Remaining:
+      - '599'
+      Rate-Limit-Reset:
+      - '60'
+      Request-Id:
+      - '689074223713206593'
+      Vary:
+      - Origin, Accept-Encoding
+      X-Powered-By:
+      - Express
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=MKTxbw9UYw3LYE.eh6favxYjYUf7RiPce_Z_hBFtKHg-1719992406-1.0.1.1-RR7SNF_RorA_I2DMwhUFjirKXx2_ysuaSZhqns3lbFg0h_r1nCnWtT5p1sWCEkwjj1auQ90.Ir82cDGWOh7GVA;
+        path=/; expires=Wed, 03-Jul-24 08:10:06 GMT; domain=.xendit.co; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 89d539bbe9e587cb-SIN
+    body:
+      encoding: UTF-8
+      string: '{"id":"pm-5b947421-7c08-4e8a-959e-75a38d706929","type":"VIRTUAL_ACCOUNT","country":"ID","business_id":"66309c544d1384b813795b6f","customer_id":null,"reference_id":"afb0e7d3-6ed2-48df-a6c0-9e01ab488fc5","reusability":"ONE_TIME_USE","status":"PENDING","actions":[],"description":null,"created":"2024-07-03T07:40:06.510257137Z","updated":"2024-07-03T07:40:06.691899914Z","metadata":{"branch_code":"ABC123"},"billing_information":null,"failure_code":null,"ewallet":null,"direct_bank_transfer":null,"direct_debit":null,"card":null,"over_the_counter":null,"qr_code":null,"virtual_account":{"amount":100000,"currency":"IDR","channel_code":"BSI","channel_properties":{"customer_name":"John
+        Doe","virtual_account_number":"934799997814177","expires_at":"2024-07-04T06:47:23.784379Z"}}}
+
+        '
+  recorded_at: Wed, 03 Jul 2024 07:40:06 GMT
+recorded_with: VCR 6.2.0

@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.xendit.co/v2/payment_methods
+    body:
+      encoding: UTF-8
+      string: '{"type":"VIRTUAL_ACCOUNT","reusability":"ONE_TIME_USE","metadata":{"branch_code":"ABC123"}}'
+    headers:
+      Authorization: FILTERED_AUTH_KEY
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 03 Jul 2024 07:43:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '86'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Rate-Limit-Limit:
+      - '600'
+      Rate-Limit-Remaining:
+      - '599'
+      Rate-Limit-Reset:
+      - '60'
+      Request-Id:
+      - '7492949351384192651'
+      Vary:
+      - Origin, Accept-Encoding
+      X-Powered-By:
+      - Express
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=gkOa8T5m7n2Rj_leZGlvQNosAY.NDLDRxa3Apsnfbd4-1719992627-1.0.1.1-04Uq6TzjO3T5yCLXVVdLsZM80RK1r3nYBf3tXBCU3.LybLiMJQSKMSCF_Pvt4vF3jmR4jBiCSAHSWEUWs80drA;
+        path=/; expires=Wed, 03-Jul-24 08:13:47 GMT; domain=.xendit.co; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 89d53f215c143ded-SIN
+    body:
+      encoding: UTF-8
+      string: '{"error_code":"API_VALIDATION_ERROR","message":"field ''virtual_account''
+        is required"}
+
+        '
+  recorded_at: Wed, 03 Jul 2024 07:43:47 GMT
+recorded_with: VCR 6.2.0

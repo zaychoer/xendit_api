@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.xendit.co/v2/payment_methods
+    body:
+      encoding: UTF-8
+      string: '{"type":"QR_CODE","reusability":"ONE_TIME_USE"}'
+    headers:
+      Authorization: FILTERED_AUTH_KEY
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 03 Jul 2024 07:49:49 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '78'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Rate-Limit-Limit:
+      - '600'
+      Rate-Limit-Remaining:
+      - '598'
+      Rate-Limit-Reset:
+      - '59.567'
+      Request-Id:
+      - '1328063820746625169'
+      Vary:
+      - Origin, Accept-Encoding
+      X-Powered-By:
+      - Express
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=tnDqIrAW2tbkAESHC_kNhtK7rI2_RS.Z2p66f94ac6k-1719992989-1.0.1.1-cjnQHgv1yS.r.oU4kSiAKtrCVYQZ_uMvpQj1DJNIlbmj7qTvtfULgNNpFqDQRhW1_Tbn12olDksju5rwkfT9mg;
+        path=/; expires=Wed, 03-Jul-24 08:19:49 GMT; domain=.xendit.co; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 89d547f56aaa8950-SIN
+    body:
+      encoding: UTF-8
+      string: '{"error_code":"API_VALIDATION_ERROR","message":"field ''qr_code'' is
+        required"}
+
+        '
+  recorded_at: Wed, 03 Jul 2024 07:49:49 GMT
+recorded_with: VCR 6.2.0
