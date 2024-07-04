@@ -14,6 +14,7 @@ module XenditApi
     class UnknownError < ResponseError; end
     class ServerError < ResponseError; end
     class DuplicateError < ResponseError; end
+    class IdempotencyError < ResponseError; end
     class DataNotFound < ResponseError; end
     class RequestForbidden < ResponseError; end
   end

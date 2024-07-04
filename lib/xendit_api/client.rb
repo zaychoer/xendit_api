@@ -14,6 +14,7 @@ require 'xendit_api/api/transaction'
 require 'xendit_api/api/fee_rule'
 require 'xendit_api/api/report'
 require 'xendit_api/api/v2/payment_method'
+require 'xendit_api/api/customer'
 require 'logger'
 
 module XenditApi
@@ -100,6 +101,11 @@ module XenditApi
     def payment_method
       @payment_method ||= XenditApi::Api::V2::PaymentMethod.new(self)
     end
+
+    def customer
+      @customer ||= XenditApi::Api::V2::Customer.new(self)
+    end
+
 
     def get(url, params = nil, headers = {})
       response = @connection.get(url, params, headers)

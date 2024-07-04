@@ -1,0 +1,90 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.xendit.co/customers
+    body:
+      encoding: UTF-8
+      string: '{"reference_id":"test-1234567890","type":"INDIVIDUAL","individual_detail":{"given_names":"John","surname":"Doe"},"email":"testemail@email.com","mobile_number":"+628774494404"}'
+    headers:
+      For-User-Id:
+      - 667d15f3e07834e30a69ff45
+      Idempotency-Key:
+      - test-1234567890
+      Api-Version:
+      - '2020-10-31'
+      Authorization: FILTERED_AUTH_KEY
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 03 Jul 2024 09:59:19 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - 'default-src ''self'';base-uri ''self'';block-all-mixed-content;font-src ''self''
+        https: data:;frame-ancestors ''self'';img-src ''self'' data:;object-src ''none'';script-src
+        ''self'';script-src-attr ''none'';style-src ''self'' https: ''unsafe-inline'';upgrade-insecure-requests'
+      Etag:
+      - W/"29c-L45mH0E33h0QLgYmmFSIBA0qPnc"
+      Expect-Ct:
+      - max-age=0
+      Rate-Limit-Limit:
+      - '600'
+      Rate-Limit-Remaining:
+      - '599'
+      Rate-Limit-Reset:
+      - '60'
+      Referrer-Policy:
+      - no-referrer
+      Request-Id:
+      - '9057151590943488462'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Dns-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Powered-By:
+      - Express
+      X-Xss-Protection:
+      - '0'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=578M5VrIrKZWDzS3oi9RRKhlIK3g6ZogSzCbYOp2NPU-1720000759-1.0.1.1-e7WO9A0ct_DDVZcF8Xv1j9ZMeSukcmmgPPmLnrXHBqluVUliZq.XPuHBOhMFXM30iqNpDZ95hZZEroCFC...4w;
+        path=/; expires=Wed, 03-Jul-24 10:29:19 GMT; domain=.xendit.co; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 89d605a89ceca092-SIN
+    body:
+      encoding: ASCII-8BIT
+      string: '{"type":"INDIVIDUAL","date_of_registration":null,"email":"testemail@email.com","mobile_number":"+628774494404","phone_number":null,"created":"2024-07-03T09:59:19.315Z","updated":"2024-07-03T09:59:19.315Z","description":null,"hashed_phone_number":null,"domicile_of_registration":null,"kyc_documents":[],"id":"cust-96f0340d-d89f-47a0-a382-be79554558ff","reference_id":"test-1234567890","metadata":null,"individual_detail":{"given_names":"John","given_names_non_roman":null,"surname":"Doe","surname_non_roman":null,"nationality":null,"date_of_birth":null,"place_of_birth":null,"gender":null,"employment":null},"business_detail":null,"addresses":[],"identity_accounts":[]}'
+  recorded_at: Wed, 03 Jul 2024 09:59:19 GMT
+recorded_with: VCR 6.2.0

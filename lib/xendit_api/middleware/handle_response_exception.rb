@@ -51,6 +51,8 @@ module XenditApi
           raise XenditApi::Errors::V1::Ewallet::ChannelNotActivated.new(error_message, json_response)
         when 'DUPLICATE_ERROR'
           raise XenditApi::Errors::DuplicateError.new(error_message, json_response)
+        when 'IDEMPOTENCY_ERROR'
+          raise XenditApi::Errors::IdempotencyError.new(error_message, json_response)
         when 'DATA_NOT_FOUND'
           raise XenditApi::Errors::DataNotFound.new(error_message, json_response)
         when 'API_VALIDATION_ERROR'

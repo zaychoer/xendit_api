@@ -1,0 +1,91 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.xendit.co/customers
+    body:
+      encoding: UTF-8
+      string: '{"reference_id":"test-1234567890","type":"INDIVIDUAL","individual_detail":{"given_names":"John","surname":"Doe"},"email":"testemail@email.com","mobile_number":"+628774494404"}'
+    headers:
+      For-User-Id:
+      - 667d15f3e07834e30a69ff45
+      Idempotency-Key:
+      - test-123456789
+      Api-Version:
+      - '2020-10-31'
+      Authorization: FILTERED_AUTH_KEY
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 409
+      message: Conflict
+    headers:
+      Date:
+      - Wed, 03 Jul 2024 10:11:14 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '126'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Content-Security-Policy:
+      - 'default-src ''self'';base-uri ''self'';block-all-mixed-content;font-src ''self''
+        https: data:;frame-ancestors ''self'';img-src ''self'' data:;object-src ''none'';script-src
+        ''self'';script-src-attr ''none'';style-src ''self'' https: ''unsafe-inline'';upgrade-insecure-requests'
+      Etag:
+      - W/"7e-D0mHAFT4y2h5mBjg1OZJYlsw59w"
+      Expect-Ct:
+      - max-age=0
+      Rate-Limit-Limit:
+      - '600'
+      Rate-Limit-Remaining:
+      - '598'
+      Rate-Limit-Reset:
+      - '22.646'
+      Referrer-Policy:
+      - no-referrer
+      Request-Id:
+      - '1991188925673856935'
+      Strict-Transport-Security:
+      - max-age=15552000; includeSubDomains
+      Vary:
+      - Accept-Encoding
+      X-Content-Type-Options:
+      - nosniff
+      X-Dns-Prefetch-Control:
+      - 'off'
+      X-Download-Options:
+      - noopen
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Permitted-Cross-Domain-Policies:
+      - none
+      X-Powered-By:
+      - Express
+      X-Xss-Protection:
+      - '0'
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=gJ7lqjxwePb.PpRwvR6SGuFQYxiQ.1eHJFumJehMekU-1720001474-1.0.1.1-d7cLtsvk_JF1x8PQLY0ZhKcGCy77R5RAorGd4_smT.kVzqmDHAwvP4WN30_9BGK.OsqnGjUfqsFZccCY34udVQ;
+        path=/; expires=Wed, 03-Jul-24 10:41:14 GMT; domain=.xendit.co; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 89d6171cfd4a8207-SIN
+    body:
+      encoding: UTF-8
+      string: '{"error_code":"DUPLICATE_ERROR","message":"The reference_id entered
+        has been used before. Please enter a unique reference_id"}'
+  recorded_at: Wed, 03 Jul 2024 10:11:14 GMT
+recorded_with: VCR 6.2.0
