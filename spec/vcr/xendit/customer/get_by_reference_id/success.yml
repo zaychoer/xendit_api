@@ -1,38 +1,34 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://api.xendit.co/customers
+    method: get
+    uri: https://api.xendit.co/customers?reference_id=reference-id-1234567895
     body:
-      encoding: UTF-8
-      string: '{"reference_id":"reference-id-1234567895","type":"INDIVIDUAL","individual_detail":{"given_names":"John","surname":"Doe"},"email":"testemail@email.com","mobile_number":"+628774494404"}'
+      encoding: US-ASCII
+      string: ''
     headers:
+      User-Agent:
+      - Faraday v1.10.3
       For-User-Id:
       - 667d15f3e07834e30a69ff45
-      Idempotency-Key:
-      - idempotency-key-1234567896
       Api-Version:
       - '2020-10-31'
       Authorization: FILTERED_AUTH_KEY
-      Content-Type:
-      - application/json
       Accept-Encoding:
       - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
       Accept:
       - "*/*"
-      User-Agent:
-      - Ruby
   response:
     status:
-      code: 409
-      message: Conflict
+      code: 200
+      message: OK
     headers:
       Date:
-      - Thu, 04 Jul 2024 04:53:15 GMT
+      - Thu, 04 Jul 2024 04:53:16 GMT
       Content-Type:
       - application/json; charset=utf-8
-      Content-Length:
-      - '126'
+      Transfer-Encoding:
+      - chunked
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
@@ -42,19 +38,19 @@ http_interactions:
         https: data:;frame-ancestors ''self'';img-src ''self'' data:;object-src ''none'';script-src
         ''self'';script-src-attr ''none'';style-src ''self'' https: ''unsafe-inline'';upgrade-insecure-requests'
       Etag:
-      - W/"7e-D0mHAFT4y2h5mBjg1OZJYlsw59w"
+      - W/"2c0-Rzn9x473MQtejIXdaSSj0Yau6TA"
       Expect-Ct:
       - max-age=0
       Rate-Limit-Limit:
       - '600'
       Rate-Limit-Remaining:
-      - '598'
+      - '599'
       Rate-Limit-Reset:
-      - '59.621'
+      - '60'
       Referrer-Policy:
       - no-referrer
       Request-Id:
-      - '6462308797940628273'
+      - '4555324332198752647'
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
       Vary:
@@ -76,16 +72,15 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=w.owVczciKkIrJQQkCDxdhjMiKxG1VFW.FwFxEf6.R8-1720068795-1.0.1.1-2UErz4ZobWN_oAezWjPgENAn6B4uCzfvXO5SZ34aboNXcbjcOEuv0ohvTgbzNL9DTZrmTVB5IyUYfme9ixoGCw;
-        path=/; expires=Thu, 04-Jul-24 05:23:15 GMT; domain=.xendit.co; HttpOnly;
+      - __cf_bm=fSAB7xFBKa4VIaR7egJzK_eKBOcTTyDLP9HQXSzM2d8-1720068796-1.0.1.1-fA79OFo1CYlWhBM0akj.rDLnACOTYpomvzBfXe9wGz6e0Ruu2dF0oAMNisO9gbNLXYtfbnLRCxMGBlRf0S50Ag;
+        path=/; expires=Thu, 04-Jul-24 05:23:16 GMT; domain=.xendit.co; HttpOnly;
         Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 89dc82b209a53de2-SIN
+      - 89dc82b66ed93f81-SIN
     body:
-      encoding: UTF-8
-      string: '{"error_code":"DUPLICATE_ERROR","message":"The reference_id entered
-        has been used before. Please enter a unique reference_id"}'
-  recorded_at: Thu, 04 Jul 2024 04:53:15 GMT
+      encoding: ASCII-8BIT
+      string: '{"data":[{"type":"INDIVIDUAL","date_of_registration":null,"email":"testemail@email.com","mobile_number":"+628774494404","phone_number":null,"created":"2024-07-04T04:53:14.982Z","updated":"2024-07-04T04:53:14.982Z","description":null,"hashed_phone_number":null,"domicile_of_registration":null,"identity_accounts":[],"addresses":[],"kyc_documents":[],"id":"cust-77a1ef9f-60a1-4016-af95-2de82bbb0e2f","reference_id":"reference-id-1234567895","metadata":null,"individual_detail":{"given_names":"John","given_names_non_roman":null,"surname":"Doe","surname_non_roman":null,"nationality":null,"date_of_birth":null,"place_of_birth":null,"gender":null,"employment":null},"business_detail":null}],"has_more":false}'
+  recorded_at: Thu, 04 Jul 2024 04:53:16 GMT
 recorded_with: VCR 6.2.0

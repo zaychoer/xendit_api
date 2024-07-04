@@ -5,12 +5,12 @@ http_interactions:
     uri: https://api.xendit.co/customers
     body:
       encoding: UTF-8
-      string: '{"reference_id":"test-1234567890","type":"INDIVIDUAL","individual_detail":{"given_names":"John","surname":"Doe"},"email":"testemail@email.com","mobile_number":"+628774494404"}'
+      string: '{"reference_id":"reference-id-1234567896","type":"INDIVIDUAL","individual_detail":{"given_names":"John","surname":"Doe"},"email":"testemail@email.com","mobile_number":"+628774494404"}'
     headers:
       For-User-Id:
       - 667d15f3e07834e30a69ff45
       Idempotency-Key:
-      - test-123456789
+      - idempotency-key-1234567895
       Api-Version:
       - '2020-10-31'
       Authorization: FILTERED_AUTH_KEY
@@ -28,11 +28,11 @@ http_interactions:
       message: Conflict
     headers:
       Date:
-      - Thu, 04 Jul 2024 03:06:28 GMT
+      - Thu, 04 Jul 2024 04:53:15 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
-      - '232'
+      - '244'
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
@@ -42,19 +42,19 @@ http_interactions:
         https: data:;frame-ancestors ''self'';img-src ''self'' data:;object-src ''none'';script-src
         ''self'';script-src-attr ''none'';style-src ''self'' https: ''unsafe-inline'';upgrade-insecure-requests'
       Etag:
-      - W/"e8-R+FWP+hRPRnvrC5tx0A3KroWU2Y"
+      - W/"f4-RrhuJVm2xZjzQsGbaXXmDA/feZw"
       Expect-Ct:
       - max-age=0
       Rate-Limit-Limit:
       - '600'
       Rate-Limit-Remaining:
-      - '599'
+      - '597'
       Rate-Limit-Reset:
-      - '60'
+      - '59.269'
       Referrer-Policy:
       - no-referrer
       Request-Id:
-      - '4378725384405142142'
+      - '6008961037388796823'
       Strict-Transport-Security:
       - max-age=15552000; includeSubDomains
       Vary:
@@ -76,17 +76,17 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=r8Ohteu8sqGVqPoivSPSlQUdeKYMSLa.5_GoopHwxt4-1720062388-1.0.1.1-0cjhxxlFBHuMgP7fbREy2B4b2VEVDU8tk7DESPeb3HSfNlmawRXuD0RoOK7UU_W.NZ8yIiPM5EOhPA8Ev87VUQ;
-        path=/; expires=Thu, 04-Jul-24 03:36:28 GMT; domain=.xendit.co; HttpOnly;
+      - __cf_bm=w.uGXu6vqRRVEiNJC6Tv0lm9WzWn0njbIZfgXkZz_04-1720068795-1.0.1.1-JVSAk02glltlhKgpF9FSsE.ADwh5VhwRV2761gM8jKlEf2yPfL.j7CwIMzpjN3pMfQa3bxr1tKgzMMqnCAmrew;
+        path=/; expires=Thu, 04-Jul-24 05:23:15 GMT; domain=.xendit.co; HttpOnly;
         Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 89dbe643fa6a6bca-SIN
+      - 89dc82b44c0d482e-SIN
     body:
       encoding: UTF-8
       string: '{"error_code":"IDEMPOTENCY_ERROR","message":"Keys for idempotent requests
-        can only be used once for the same endpoint. Try using a key other than ''test-123456789''
+        can only be used once for the same endpoint. Try using a key other than ''idempotency-key-1234567895''
         if you meant to execute a different request over the same endpoint."}'
-  recorded_at: Thu, 04 Jul 2024 03:06:27 GMT
+  recorded_at: Thu, 04 Jul 2024 04:53:15 GMT
 recorded_with: VCR 6.2.0
