@@ -7,6 +7,10 @@ http_interactions:
       encoding: UTF-8
       string: '{"type":"QR_CODE","reusability":"ONE_TIME_USE","qr_code":{"amount":1000,"currency":"IDR","channel_code":"DANA"}}'
     headers:
+      Idempotency-Key:
+      - idempotency-key-1234567893
+      For-User-Id:
+      - 667d15f3e07834e30a69ff45
       Authorization: FILTERED_AUTH_KEY
       Content-Type:
       - application/json
@@ -22,11 +26,11 @@ http_interactions:
       message: Created
     headers:
       Date:
-      - Wed, 03 Jul 2024 07:49:48 GMT
+      - Tue, 09 Jul 2024 04:00:19 GMT
       Content-Type:
       - application/json
       Content-Length:
-      - '712'
+      - '711'
       Connection:
       - keep-alive
       Access-Control-Allow-Origin:
@@ -34,11 +38,11 @@ http_interactions:
       Rate-Limit-Limit:
       - '600'
       Rate-Limit-Remaining:
-      - '599'
+      - '597'
       Rate-Limit-Reset:
-      - '60'
+      - '59.356'
       Request-Id:
-      - '9077232143069985739'
+      - '6863077839641681519'
       Vary:
       - Origin, Accept-Encoding
       X-Powered-By:
@@ -46,17 +50,17 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=GApcnIV7fv7TlZ0BA9K_XQPG.dPJql3NHGXx998qI44-1719992988-1.0.1.1-v_1g9ZvqI_FeLByesEu8t29UqrxmzazEYdaCuZCNeK4UHQgGZTlYQASXDzGgKZwBMu6vb2XjkbU__ZscVpYaEQ;
-        path=/; expires=Wed, 03-Jul-24 08:19:48 GMT; domain=.xendit.co; HttpOnly;
+      - __cf_bm=xJvZgC_L27_.hpABENXw5W6THH8nEVnyZ2uhBs1E3UI-1720497619-1.0.1.1-AedQwsRcU.haEaPhrYfbaQgRAyQ06BrWk70jscYIaa1MmYMYOpAjWuo9aFDO3FzG3xA58rEG0HVPfy0RNqoVHw;
+        path=/; expires=Tue, 09-Jul-24 04:30:19 GMT; domain=.xendit.co; HttpOnly;
         Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 89d547f2ca4f46a9-SIN
+      - 8a0568051943be92-CGK
     body:
       encoding: UTF-8
-      string: '{"id":"pm-82c64e96-7400-4981-b95a-7b7e1ca6acca","type":"QR_CODE","country":"ID","business_id":"66309c544d1384b813795b6f","customer_id":null,"reference_id":"be2ab461-a386-4d1e-9c63-940af26cc9e4","reusability":"ONE_TIME_USE","status":"ACTIVE","actions":[],"description":null,"created":"2024-07-03T07:49:48.728035366Z","updated":"2024-07-03T07:49:48.728035366Z","metadata":null,"billing_information":null,"failure_code":null,"ewallet":null,"direct_bank_transfer":null,"direct_debit":null,"card":null,"over_the_counter":null,"qr_code":{"amount":1000,"currency":"IDR","channel_code":"DANA","channel_properties":{"qr_string":"some-random-qr-string","expires_at":"2024-07-05T07:49:48.717378Z"}},"virtual_account":null}
+      string: '{"id":"pm-01fada86-3f12-45f2-9e17-cd087b07af96","type":"QR_CODE","country":"ID","business_id":"667d15f3e07834e30a69ff45","customer_id":null,"reference_id":"c458732a-d4ab-426d-8b2f-08f5c9b80ff1","reusability":"ONE_TIME_USE","status":"ACTIVE","actions":[],"description":null,"created":"2024-07-09T04:00:19.165088556Z","updated":"2024-07-09T04:00:19.165088556Z","metadata":null,"billing_information":null,"failure_code":null,"ewallet":null,"direct_bank_transfer":null,"direct_debit":null,"card":null,"over_the_counter":null,"qr_code":{"amount":1000,"currency":"IDR","channel_code":"DANA","channel_properties":{"qr_string":"some-random-qr-string","expires_at":"2024-07-11T04:00:18.91975Z"}},"virtual_account":null}
 
         '
-  recorded_at: Wed, 03 Jul 2024 07:49:48 GMT
+  recorded_at: Tue, 09 Jul 2024 04:00:19 GMT
 recorded_with: VCR 6.2.0

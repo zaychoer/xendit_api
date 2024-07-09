@@ -7,6 +7,10 @@ http_interactions:
       encoding: UTF-8
       string: '{"type":"VIRTUAL_ACCOUNT","reusability":"ONE_TIME_USE","metadata":{"branch_code":"ABC123"}}'
     headers:
+      Idempotency-Key:
+      - idempotency-key-1234567892
+      For-User-Id:
+      - 667d15f3e07834e30a69ff45
       Authorization: FILTERED_AUTH_KEY
       Content-Type:
       - application/json
@@ -22,7 +26,7 @@ http_interactions:
       message: Bad Request
     headers:
       Date:
-      - Wed, 03 Jul 2024 07:43:47 GMT
+      - Tue, 09 Jul 2024 04:00:18 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -34,11 +38,11 @@ http_interactions:
       Rate-Limit-Limit:
       - '600'
       Rate-Limit-Remaining:
-      - '599'
+      - '598'
       Rate-Limit-Reset:
-      - '60'
+      - '59.598'
       Request-Id:
-      - '7492949351384192651'
+      - '3728474020736302881'
       Vary:
       - Origin, Accept-Encoding
       X-Powered-By:
@@ -46,18 +50,18 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=gkOa8T5m7n2Rj_leZGlvQNosAY.NDLDRxa3Apsnfbd4-1719992627-1.0.1.1-04Uq6TzjO3T5yCLXVVdLsZM80RK1r3nYBf3tXBCU3.LybLiMJQSKMSCF_Pvt4vF3jmR4jBiCSAHSWEUWs80drA;
-        path=/; expires=Wed, 03-Jul-24 08:13:47 GMT; domain=.xendit.co; HttpOnly;
+      - __cf_bm=_eO.ZhljZc_7X5_PDYakN_K.j6dGwtmCYJ.WfSDI32Q-1720497618-1.0.1.1-poS1U9bHHsrV14Uw_nCiPc9q2H_J.Qk51QFvbf6cGeBd.fqAZ_SDpO6gFDPtehBqqlTbcYKZjpX.zyYmziKJ8A;
+        path=/; expires=Tue, 09-Jul-24 04:30:18 GMT; domain=.xendit.co; HttpOnly;
         Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 89d53f215c143ded-SIN
+      - 8a0568038d44b5dc-CGK
     body:
       encoding: UTF-8
       string: '{"error_code":"API_VALIDATION_ERROR","message":"field ''virtual_account''
         is required"}
 
         '
-  recorded_at: Wed, 03 Jul 2024 07:43:47 GMT
+  recorded_at: Tue, 09 Jul 2024 04:00:18 GMT
 recorded_with: VCR 6.2.0

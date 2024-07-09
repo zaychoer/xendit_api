@@ -7,6 +7,10 @@ http_interactions:
       encoding: UTF-8
       string: '{"type":"QR_CODE","reusability":"ONE_TIME_USE"}'
     headers:
+      Idempotency-Key:
+      - idempotency-key-1234567894
+      For-User-Id:
+      - 667d15f3e07834e30a69ff45
       Authorization: FILTERED_AUTH_KEY
       Content-Type:
       - application/json
@@ -22,7 +26,7 @@ http_interactions:
       message: Bad Request
     headers:
       Date:
-      - Wed, 03 Jul 2024 07:49:49 GMT
+      - Tue, 09 Jul 2024 04:00:19 GMT
       Content-Type:
       - application/json
       Content-Length:
@@ -34,11 +38,11 @@ http_interactions:
       Rate-Limit-Limit:
       - '600'
       Rate-Limit-Remaining:
-      - '598'
+      - '596'
       Rate-Limit-Reset:
-      - '59.567'
+      - '58.795'
       Request-Id:
-      - '1328063820746625169'
+      - '8421803088345843447'
       Vary:
       - Origin, Accept-Encoding
       X-Powered-By:
@@ -46,18 +50,18 @@ http_interactions:
       Cf-Cache-Status:
       - DYNAMIC
       Set-Cookie:
-      - __cf_bm=tnDqIrAW2tbkAESHC_kNhtK7rI2_RS.Z2p66f94ac6k-1719992989-1.0.1.1-cjnQHgv1yS.r.oU4kSiAKtrCVYQZ_uMvpQj1DJNIlbmj7qTvtfULgNNpFqDQRhW1_Tbn12olDksju5rwkfT9mg;
-        path=/; expires=Wed, 03-Jul-24 08:19:49 GMT; domain=.xendit.co; HttpOnly;
+      - __cf_bm=WtOS54tB7sZ7hh7KBwLaX36EVi8oLLu7Uk1yS5.UT90-1720497619-1.0.1.1-woWzVoT8oXMZUe7X0e_uI3ewrjNmlBSQu5yapSa2ca_iPaR9.DYuSRGAxg.5sfR6GSwmynLZ4oEETy0RBLondw;
+        path=/; expires=Tue, 09-Jul-24 04:30:19 GMT; domain=.xendit.co; HttpOnly;
         Secure; SameSite=None
       Server:
       - cloudflare
       Cf-Ray:
-      - 89d547f56aaa8950-SIN
+      - 8a056808bffb6d1e-CGK
     body:
       encoding: UTF-8
       string: '{"error_code":"API_VALIDATION_ERROR","message":"field ''qr_code'' is
         required"}
 
         '
-  recorded_at: Wed, 03 Jul 2024 07:49:49 GMT
+  recorded_at: Tue, 09 Jul 2024 04:00:19 GMT
 recorded_with: VCR 6.2.0

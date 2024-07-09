@@ -18,7 +18,7 @@ RSpec.describe XenditApi::Api::V2::PaymentMethod do
             channel_code: 'BSI',
             channel_properties: {
               customer_name: 'John Doe',
-              expires_at: '2024-07-04T06:47:23.784379Z'
+              expires_at: '2024-07-10T10:47:23.784379Z'
             }
           },
           reusability: 'ONE_TIME_USE',
@@ -30,7 +30,11 @@ RSpec.describe XenditApi::Api::V2::PaymentMethod do
 
       it 'returns success response' do
         VCR.use_cassette('xendit/v2/payment_method/virtual_account/success') do
-          response = payment_method.post(params: params)
+          headers = {
+            IDEMPOTENCY_KEY: 'idempotency-key-12345678911',
+            for_user_id: '667d15f3e07834e30a69ff45',
+          }
+          response = payment_method.post(params, headers)
 
           expect(response).to be_instance_of XenditApi::Model::V2::PaymentMethod
           expect(response.type).to eq 'VIRTUAL_ACCOUNT'
@@ -52,8 +56,12 @@ RSpec.describe XenditApi::Api::V2::PaymentMethod do
 
       it 'raise error xendit validation' do
         VCR.use_cassette('xendit/v2/payment_method/virtual_account/validation_error') do
+          headers = {
+            IDEMPOTENCY_KEY: 'idempotency-key-1234567892',
+            for_user_id: '667d15f3e07834e30a69ff45',
+          }
           expect do
-            payment_method.post(params: params)
+            payment_method.post(params, headers)
           end.to raise_error do |error|
             expect(error).to be_a XenditApi::Errors::ApiValidation
             expect(error.message).to eq 'Validation error'
@@ -77,7 +85,11 @@ RSpec.describe XenditApi::Api::V2::PaymentMethod do
 
           it 'returns success response' do
             VCR.use_cassette('xendit/v2/payment_method/qr_code/success') do
-              response = payment_method.post(params: params)
+              headers = {
+                IDEMPOTENCY_KEY: 'idempotency-key-1234567893',
+                for_user_id: '667d15f3e07834e30a69ff45',
+              }
+              response = payment_method.post(params, headers)
 
               expect(response).to be_instance_of XenditApi::Model::V2::PaymentMethod
               expect(response.type).to eq 'QR_CODE'
@@ -96,8 +108,12 @@ RSpec.describe XenditApi::Api::V2::PaymentMethod do
 
           it 'raise error xendit validation' do
             VCR.use_cassette('xendit/v2/payment_method/qr_code/validation_error') do
+              headers = {
+                IDEMPOTENCY_KEY: 'idempotency-key-1234567894',
+                for_user_id: '667d15f3e07834e30a69ff45',
+              }
               expect do
-                payment_method.post(params: params)
+                payment_method.post(params, headers)
               end.to raise_error do |error|
                 expect(error).to be_a XenditApi::Errors::ApiValidation
                 expect(error.message).to eq 'Validation error'

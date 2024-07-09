@@ -7,8 +7,8 @@ module XenditApi
       class PaymentMethod < XenditApi::Api::Base
         PATH = '/v2/payment_methods'.freeze
 
-        def post(params:)
-          response = client.post(PATH, params)
+        def post(params, headers = {})
+          response = client.post(PATH, params, headers)
 
           XenditApi::Model::V2::PaymentMethod.new(response)
         end
