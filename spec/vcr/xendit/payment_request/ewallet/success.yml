@@ -1,0 +1,64 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.xendit.co/payment_requests
+    body:
+      encoding: UTF-8
+      string: '{"country":"ID","currency":"IDR","amount":1500,"customer_id":"cust-bd0c59cd-5225-4e3f-a8d6-47d1783832e5","payment_method":{"type":"EWALLET","reusability":"ONE_TIME_USE","ewallet":{"channel_code":"SHOPEEPAY","channel_properties":{"success_return_url":"https://redirect.me/goodstuff","failure_return_url":"https://redirect.me/badstuff"}}},"metadata":{"sku":"ABCDEFGH"}}'
+    headers:
+      Idempotency-Key:
+      - idempotency-key-1234567895
+      For-User-Id:
+      - 667d15f3e07834e30a69ff45
+      Authorization: FILTERED_AUTH_KEY
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Mon, 22 Jul 2024 09:42:08 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1672'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Rate-Limit-Limit:
+      - '600'
+      Rate-Limit-Remaining:
+      - '599'
+      Rate-Limit-Reset:
+      - '60'
+      Request-Id:
+      - '4122785401763445221'
+      Vary:
+      - Origin, Accept-Encoding
+      X-Powered-By:
+      - Express
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=xgivrwr1UdnV58JZJonK340iqZxed3VKxYr7w3W_wM0-1721641328-1.0.1.1-AcqGolydlXePzb3u2erH6TX5GyIp7hE8At2MgjXpvV01j.44VOGb1AFzGk.0CX5XnUZP4Vj9eYdeep8USIDsyA;
+        path=/; expires=Mon, 22-Jul-24 10:12:08 GMT; domain=.xendit.co; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8a727a9e795c5ea8-CGK
+    body:
+      encoding: UTF-8
+      string: '{"id":"pr-5c8ef459-e7ea-46b5-8c2c-50da8248c167","country":"ID","amount":1500,"currency":"IDR","business_id":"667d15f3e07834e30a69ff45","reference_id":"434e5f03-03fa-4172-9e9c-7a5177f08c29","payment_method":{"id":"pm-4c134907-b969-467b-b075-1052752463cf","type":"EWALLET","reference_id":"2ad1597c-703c-486d-870d-6a7ed1bf67f6","description":null,"created":"2024-07-22T09:42:08.589803433Z","updated":"2024-07-22T09:42:08.589803433Z","card":null,"ewallet":{"channel_code":"SHOPEEPAY","channel_properties":{"failure_return_url":"https://redirect.me/badstuff","success_return_url":"https://redirect.me/goodstuff"},"account":{"name":null,"account_details":null,"balance":null,"point_balance":null}},"direct_debit":null,"direct_bank_transfer":null,"over_the_counter":null,"virtual_account":null,"qr_code":null,"metadata":null,"billing_information":{"city":null,"country":"","postal_code":null,"province_state":null,"street_line1":null,"street_line2":null},"reusability":"ONE_TIME_USE","status":"ACTIVE"},"description":null,"metadata":{"sku":"ABCDEFGH"},"customer_id":"cust-bd0c59cd-5225-4e3f-a8d6-47d1783832e5","capture_method":"AUTOMATIC","initiator":null,"card_verification_results":null,"created":"2024-07-22T09:42:08.680060753Z","updated":"2024-07-22T09:42:08.680060753Z","status":"REQUIRES_ACTION","actions":[{"action":"AUTH","url":"https://ewallet-mock-connector.xendit.co/v1/ewallet_connector/checkouts?token=cqf2is2oaut5fld6bb90","url_type":"DEEPLINK","method":"GET","qr_code":null},{"action":"PRESENT_TO_CUSTOMER","url":null,"url_type":null,"method":null,"qr_code":"test-qr-string"}],"failure_code":null,"channel_properties":null,"shipping_information":null,"items":null}'
+  recorded_at: Mon, 22 Jul 2024 09:42:08 GMT
+recorded_with: VCR 6.2.0

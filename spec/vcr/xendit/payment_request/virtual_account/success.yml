@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.xendit.co/payment_requests
+    body:
+      encoding: UTF-8
+      string: '{"currency":"IDR","amount":100000,"payment_method":{"type":"VIRTUAL_ACCOUNT","reusability":"ONE_TIME","reference_id":"pm-level-33a918bb-0cc3-4b27-8206-5425b375f1ac","virtual_account":{"channel_code":"BRI","channel_properties":{"customer_name":"John
+        Doe"}}},"metadata":{"sku":"ABCDEFGH"}}'
+    headers:
+      Idempotency-Key:
+      - idempotency-key-123456789
+      For-User-Id:
+      - 667d15f3e07834e30a69ff45
+      Authorization: FILTERED_AUTH_KEY
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Mon, 22 Jul 2024 08:15:52 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1321'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Rate-Limit-Limit:
+      - '600'
+      Rate-Limit-Remaining:
+      - '599'
+      Rate-Limit-Reset:
+      - '60'
+      Request-Id:
+      - '1262808492308345809'
+      Vary:
+      - Origin, Accept-Encoding
+      X-Powered-By:
+      - Express
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=ESw09vzXQ091pCVClVz4ZjmrI.QhkLogWlGw5YbFsGk-1721636152-1.0.1.1-mvbHCMBvaPCDNLkyMJihwYxqs1BZ_kvH0pqjHggScOu.qbxTl7pTTFUBZ4tsB4vsE_dtVRRQsh7xNUFOsH1Lig;
+        path=/; expires=Mon, 22-Jul-24 08:45:52 GMT; domain=.xendit.co; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8a71fc419d4d9fd9-SIN
+    body:
+      encoding: UTF-8
+      string: '{"actions":[],"amount":100000,"business_id":"667d15f3e07834e30a69ff45","capture_method":"AUTOMATIC","card_verification_results":null,"channel_properties":null,"country":"ID","created":"2024-07-22T07:49:39.612741563Z","currency":"IDR","customer_id":null,"description":null,"failure_code":null,"id":"pr-f6cabd69-0d91-47e7-a78d-e7f2b69e33fd","initiator":null,"items":null,"metadata":{"sku":"ABCDEFGH"},"payment_method":{"billing_information":{"city":null,"country":"","postal_code":null,"province_state":null,"street_line1":null,"street_line2":null},"card":null,"created":"2024-07-22T07:49:39.643592182Z","description":null,"direct_bank_transfer":null,"direct_debit":null,"ewallet":null,"id":"pm-d1ec48ba-cec7-4699-8be0-a8d8261c2bd3","metadata":null,"over_the_counter":null,"qr_code":null,"reference_id":"pm-level-33a918bb-0cc3-4b27-8206-5425b375f1ac","reusability":"ONE_TIME_USE","status":"PENDING","type":"VIRTUAL_ACCOUNT","updated":"2024-07-22T07:49:40.019914191Z","virtual_account":{"amount":100000,"channel_code":"BRI","channel_properties":{"customer_name":"John
+        Doe","expires_at":"2055-07-22T07:49:39.675991Z","virtual_account_number":"132819999993634"},"currency":"IDR"}},"reference_id":"d5ca8751-fcbf-4008-8678-697469880598","shipping_information":null,"status":"PENDING","updated":"2024-07-22T07:49:39.612741563Z"}
+
+        '
+  recorded_at: Mon, 22 Jul 2024 08:15:52 GMT
+recorded_with: VCR 6.2.0

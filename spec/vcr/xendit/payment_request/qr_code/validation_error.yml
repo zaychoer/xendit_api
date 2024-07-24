@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.xendit.co/payment_requests
+    body:
+      encoding: UTF-8
+      string: '{"amount":15000,"currency":"IDR","payment_method":{"type":"","reusability":"ONE_TIME","qr_code":{"channel_code":"DANA"}},"description":"sample
+        description","metadata":{"foo":"bar"}}'
+    headers:
+      Idempotency-Key:
+      - idempotency-key-1234567893
+      For-User-Id:
+      - 667d15f3e07834e30a69ff45
+      Authorization: FILTERED_AUTH_KEY
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Mon, 22 Jul 2024 08:18:08 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '90'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Rate-Limit-Limit:
+      - '600'
+      Rate-Limit-Remaining:
+      - '599'
+      Rate-Limit-Reset:
+      - '60'
+      Request-Id:
+      - '4371795521838349040'
+      Vary:
+      - Origin, Accept-Encoding
+      X-Powered-By:
+      - Express
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=m72u2.sOOCwgS_g5qptxxGKo1C03IAnONMdawjt5AhY-1721636288-1.0.1.1-CfdWFwYldKGT_k4cDt2egU0.Orwavpk1d3_nFlIOjIkkvTeyVZYzmCf30IkO32QSFgFFLEE_Y4k29OHHydC7Mw;
+        path=/; expires=Mon, 22-Jul-24 08:48:08 GMT; domain=.xendit.co; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8a71ff90cac85fd8-SIN
+    body:
+      encoding: UTF-8
+      string: '{"error_code":"API_VALIDATION_ERROR","message":"field ''payment_method.type''
+        is required"}
+
+        '
+  recorded_at: Mon, 22 Jul 2024 08:18:08 GMT
+recorded_with: VCR 6.2.0

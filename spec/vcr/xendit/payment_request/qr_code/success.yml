@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.xendit.co/payment_requests
+    body:
+      encoding: UTF-8
+      string: '{"amount":15000,"currency":"IDR","payment_method":{"type":"QR_CODE","reusability":"ONE_TIME","qr_code":{"channel_code":"DANA"}},"description":"sample
+        description","metadata":{"foo":"bar"}}'
+    headers:
+      Idempotency-Key:
+      - idempotency-key-1234567892
+      For-User-Id:
+      - 667d15f3e07834e30a69ff45
+      Authorization: FILTERED_AUTH_KEY
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 201
+      message: Created
+    headers:
+      Date:
+      - Mon, 22 Jul 2024 08:16:47 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '1279'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Rate-Limit-Limit:
+      - '600'
+      Rate-Limit-Remaining:
+      - '596'
+      Rate-Limit-Reset:
+      - '5.162'
+      Request-Id:
+      - '1751895787111836898'
+      Vary:
+      - Origin, Accept-Encoding
+      X-Powered-By:
+      - Express
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=fYCgnAj1TYHfhZfN4PKQW.0K35TH_ZgtpCMPBgNM.m4-1721636207-1.0.1.1-yGM70arqfyWay1zu9czPNPavmthtFi_WP_015YjlljVNSvKz2NpQXkTsazUZzRIz0w3wfaDgUPRcE3mQwF4lVg;
+        path=/; expires=Mon, 22-Jul-24 08:46:47 GMT; domain=.xendit.co; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8a71fd982e005f40-SIN
+    body:
+      encoding: UTF-8
+      string: '{"actions":[],"amount":15000,"business_id":"667d15f3e07834e30a69ff45","capture_method":"AUTOMATIC","card_verification_results":null,"channel_properties":null,"country":"ID","created":"2024-07-22T08:10:00.739741431Z","currency":"IDR","customer_id":null,"description":"sample
+        description","failure_code":null,"id":"pr-fb138316-65e4-49fc-a8d9-d47f98b56e6c","initiator":null,"items":null,"metadata":{"foo":"bar"},"payment_method":{"billing_information":{"city":null,"country":"","postal_code":null,"province_state":null,"street_line1":null,"street_line2":null},"card":null,"created":"2024-07-22T08:10:00.808563735Z","description":null,"direct_bank_transfer":null,"direct_debit":null,"ewallet":null,"id":"pm-a176e247-7fad-436d-8fef-b67e94932540","metadata":null,"over_the_counter":null,"qr_code":{"amount":15000,"channel_code":"DANA","channel_properties":{"expires_at":"2024-07-24T08:10:00.794901Z","qr_string":"some-random-qr-string"},"currency":"IDR"},"reference_id":"cbe35734-8d16-4fe7-9b4e-28270dbabcf3","reusability":"ONE_TIME_USE","status":"ACTIVE","type":"QR_CODE","updated":"2024-07-22T08:10:00.808563735Z","virtual_account":null},"reference_id":"cdd0657b-7170-43df-b0b0-7b8d94e066cc","shipping_information":null,"status":"PENDING","updated":"2024-07-22T08:10:00.739741431Z"}
+
+        '
+  recorded_at: Mon, 22 Jul 2024 08:16:47 GMT
+recorded_with: VCR 6.2.0

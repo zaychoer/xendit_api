@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.xendit.co/payment_requests
+    body:
+      encoding: UTF-8
+      string: '{"country":"ID","currency":"IDR","amount":1500,"customer_id":"cust-bd0c59cd-5225-4e3f-a8d6-47d1783832e5","payment_method":{"type":"","reusability":"ONE_TIME_USE","ewallet":{"channel_code":"SHOPEEPAY","channel_properties":{"success_return_url":"https://redirect.me/goodstuff","failure_return_url":"https://redirect.me/badstuff"}}},"metadata":{"sku":"ABCDEFGH"}}'
+    headers:
+      Idempotency-Key:
+      - idempotency-key-1234567896
+      For-User-Id:
+      - 667d15f3e07834e30a69ff45
+      Authorization: FILTERED_AUTH_KEY
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 24 Jul 2024 02:51:15 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '90'
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Rate-Limit-Limit:
+      - '600'
+      Rate-Limit-Remaining:
+      - '599'
+      Rate-Limit-Reset:
+      - '60'
+      Request-Id:
+      - '5311686741583733936'
+      Vary:
+      - Origin, Accept-Encoding
+      X-Powered-By:
+      - Express
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=APrY7nXQPk2Hb.xQPaOHJw8eK9Oh.5AHIn8yYDpR1VY-1721789475-1.0.1.1-7NVROw_EwU7E9VpkDVqSxCsOTP2q_hOov5iL5PbWxKxtlfcteiNwMCuMQ48r7Soee4FCplVxV9h_hMJ.tpUeuw;
+        path=/; expires=Wed, 24-Jul-24 03:21:15 GMT; domain=.xendit.co; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8a809b7d4e264035-SIN
+    body:
+      encoding: UTF-8
+      string: '{"error_code":"API_VALIDATION_ERROR","message":"field ''payment_method.type''
+        is required"}
+
+        '
+  recorded_at: Wed, 24 Jul 2024 02:51:15 GMT
+recorded_with: VCR 6.2.0

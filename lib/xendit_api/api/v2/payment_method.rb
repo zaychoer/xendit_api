@@ -10,7 +10,7 @@ module XenditApi
         def post(params, headers = {})
           response = client.post(PATH, params, headers)
 
-          XenditApi::Model::V2::PaymentMethod.new(response)
+          XenditApi::Model::PaymentMethod.new(response)
         end
       end
     end
