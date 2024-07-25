@@ -112,6 +112,10 @@ module XenditApi
       @customer ||= XenditApi::Api::V2::Customer.new(self)
     end
 
+    def credit_card_charge_option
+      @credit_card_charge_option ||= XenditApi::Api::CreditCardChargeOption.new(self)
+    end
+
     def get(url, params = nil, headers = {})
       response = @connection.get(url, params, headers)
       response.body
