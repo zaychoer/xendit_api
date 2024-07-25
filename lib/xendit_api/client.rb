@@ -16,6 +16,7 @@ require 'xendit_api/api/report'
 require 'xendit_api/api/v2/payment_method'
 require 'xendit_api/api/payment_request'
 require 'xendit_api/api/customer'
+require 'xendit_api/api/credit_card_charge_option'
 require 'logger'
 
 module XenditApi

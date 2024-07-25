@@ -1,0 +1,63 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://api.xendit.co/credit_card_charges/option?amount=1000000&bin=552002&currency=IDR
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.10.3
+      Authorization: FILTERED_AUTH_KEY
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 25 Jul 2024 04:45:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Etag:
+      - W/"234-CZ+jcrPn/oBCg+b3aSSHhjvNl/Q"
+      Rate-Limit-Limit:
+      - '600'
+      Rate-Limit-Remaining:
+      - '599'
+      Rate-Limit-Reset:
+      - '60'
+      Request-Id:
+      - '1040720249341814584'
+      Vary:
+      - Origin, Accept-Encoding
+      X-Powered-By:
+      - Express
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=EIIqRMamyMerOZAYtvOALnHnT6Eao_FzALasUPeqIYI-1721882733-1.0.1.1-eNtROstrdzz7nZ6vNVY_L60fnWMP7BYJWcvBYkoGDUP0vu7_O1afHxOh4RX_EjVbNuYXcd_KyfrRHfOlhoDL7w;
+        path=/; expires=Thu, 25-Jul-24 05:15:33 GMT; domain=.xendit.co; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8a898046ce043d9b-SIN
+    body:
+      encoding: ASCII-8BIT
+      string: '{"business_id":"66309c544d1384b813795b6f","installments":[{"count":6,"interval":"month","minimum_amount":500000,"acquirer":"BRI","currency":"IDR","description":"0%,
+        6 x IDR 166666.67","installment_amount":166666.67},{"count":3,"interval":"month","minimum_amount":500000,"acquirer":"BRI","currency":"IDR","description":"0%,
+        3 x IDR 333333.33","installment_amount":333333.33},{"count":12,"interval":"month","minimum_amount":500000,"acquirer":"BRI","currency":"IDR","description":"0%,
+        12 x IDR 83333.33","installment_amount":83333.33}],"bin":"552002","promotions":[]}'
+  recorded_at: Thu, 25 Jul 2024 04:45:33 GMT
+recorded_with: VCR 6.2.0
