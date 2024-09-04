@@ -1,0 +1,68 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://api.xendit.co/v2/payment_methods/pm-6444ca47-f441-415c-b169-ebdb2a52ab08/payments/simulate
+    body:
+      encoding: UTF-8
+      string: '{"amount":55200}'
+    headers:
+      For-User-Id:
+      - 667d15f3e07834e30a69ff45
+      Authorization: FILTERED_AUTH_KEY
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 04 Sep 2024 04:54:41 GMT
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Access-Control-Allow-Origin:
+      - "*"
+      Rate-Limit-Limit:
+      - '600'
+      Rate-Limit-Remaining:
+      - '599'
+      Rate-Limit-Reset:
+      - '60'
+      Request-Id:
+      - '3269426015732383342'
+      Vary:
+      - Origin, Accept-Encoding
+      X-Powered-By:
+      - Express
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=.u_iVv4fZ6pcB3UVxIlYm740EmH0g1qcEEMjF.R0Z9o-1725425681-1.0.1.1-AzJUBLrOO4JhiqvYfbKPW39XrAbD1Hu3vy7Puo0FoU__sUbhqIdHtjemvoooIGCzfKRU8OHA.dhc5fwoFLDnYQ;
+        path=/; expires=Wed, 04-Sep-24 05:24:41 GMT; domain=.xendit.co; HttpOnly;
+        Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 8bdb620abf9c3e32-SIN
+    body:
+      encoding: ASCII-8BIT
+      string: '{"message":"We''re processing payment for payment method ID ''pm-6444ca47-f441-415c-b169-ebdb2a52ab08''
+        and will send you the result via callback. Please make sure you''ve set a
+        callback URL in ''Payment Succeeded'' section in Callback settings in Xendit
+        Dashboard. If you don''t receive the callback within the next 5 minutes, please
+        contact us.","status":"PENDING"}
+
+        '
+  recorded_at: Wed, 04 Sep 2024 04:54:41 GMT
+recorded_with: VCR 6.2.0

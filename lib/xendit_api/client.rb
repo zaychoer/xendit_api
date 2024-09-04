@@ -17,6 +17,7 @@ require 'xendit_api/api/v2/payment_method'
 require 'xendit_api/api/payment_request'
 require 'xendit_api/api/customer'
 require 'xendit_api/api/credit_card_charge_option'
+require 'xendit_api/api/v2/simulate_payment'
 require 'logger'
 
 module XenditApi
@@ -114,6 +115,10 @@ module XenditApi
 
     def credit_card_charge_option
       @credit_card_charge_option ||= XenditApi::Api::CreditCardChargeOption.new(self)
+    end
+
+    def simulate_payment
+      @simulate_payment ||= XenditApi::Api::V2::SimulatePayment.new(self)
     end
 
     def get(url, params = nil, headers = {})
